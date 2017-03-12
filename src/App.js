@@ -1,7 +1,7 @@
 import React from 'react';
 import Search from './Search.js';
 import EmployersList from './EmployersList.js';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 export default class App extends React.Component {
@@ -17,21 +17,22 @@ export default class App extends React.Component {
     let text = this.state.text;
     let filteredEmployers = this.state.items.filter((employer) => {
       return employer.name.includes(text) ||
-             employer.email.includes(text);
+      employer.email.includes(text);
     });
 
     return (
       <div className="container">
-        <Search text={this.state.text} onTextChange={this.changeText} />
-        <EmployersList items={filteredEmployers} />
+      <Search text={this.state.text} onTextChange={this.changeText} />
+      <EmployersList items={filteredEmployers} />
       </div>
-    );
+      );
   }
+  
 
-  changeText(newText) {
+  changeText = (newText) => {
     this.setState({
       text: newText
-    })
+    });
   }
 
   static propTypes = {

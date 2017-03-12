@@ -12,10 +12,10 @@ export default class Search extends React.Component {
     );
   }
 
-  handleTextChange(event) {
+  handleTextChange = (event) => {
     this.props.onTextChange(event.target.value);
   }
-  
+
   static propTypes = {
     text: React.PropTypes.string
   }
